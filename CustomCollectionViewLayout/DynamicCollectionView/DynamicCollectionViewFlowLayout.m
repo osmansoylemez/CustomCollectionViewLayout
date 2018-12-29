@@ -10,6 +10,13 @@
 
 #import "DynamicCollectionView.h"
 
+static NSString *const kLayoutX = @"x";
+static NSString *const kLayoutY = @"y";
+static NSString *const kLayoutW = @"w";
+static NSString *const kLayoutH = @"h";
+static NSString *const kLayoutMultipleX = @"x";
+
+
 @interface DynamicCollectionViewFlowLayout()
 
 @property (nonatomic) CGFloat itemSizeValue;
@@ -59,10 +66,10 @@
         UICollectionViewLayoutAttributes *decorationAttributes = [self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         
         id layout = [[self.delegate itemLayoutDataSource] objectAtIndex:i];
-        decorationAttributes.frame = CGRectMake([self floatWithLayoutValue:[layout valueForKey:@"x"]],
-                                                [self floatWithLayoutValue:[layout valueForKey:@"y"]],
-                                                [self floatWithLayoutValue:[layout valueForKey:@"w"]],
-                                                [self floatWithLayoutValue:[layout valueForKey:@"h"]]);
+        decorationAttributes.frame = CGRectMake([self floatWithLayoutValue:[layout valueForKey:kLayoutX]],
+                                                [self floatWithLayoutValue:[layout valueForKey:kLayoutY]],
+                                                [self floatWithLayoutValue:[layout valueForKey:kLayoutW]],
+                                                [self floatWithLayoutValue:[layout valueForKey:kLayoutH]]);
         
         CGFloat endPoint = decorationAttributes.frame.origin.y + decorationAttributes.frame.size.height;
         if (self.contentHeight < endPoint)
@@ -77,15 +84,15 @@
 - (CGSize)sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     id layout = [[self.delegate itemLayoutDataSource] objectAtIndex:indexPath.row];
-    return CGSizeMake([self floatWithLayoutValue:[layout valueForKey:@"w"]],
-                      [self floatWithLayoutValue:[layout valueForKey:@"w"]]);
+    return CGSizeMake([self floatWithLayoutValue:[layout valueForKey:kLayoutW]],
+                      [self floatWithLayoutValue:[layout valueForKey:kLayoutH]]);
 }
 
 - (CGFloat)floatWithLayoutValue:(NSString *)value
 {
-    if ([value containsString:@"x"])
+    if ([value containsString:kLayoutMultipleX])
     {
-        return self.itemSizeValue * [[value stringByReplacingOccurrencesOfString:@"x" withString:@""] integerValue];
+        return self.itemSizeValue * [[value stringByReplacingOccurrencesOfString:kLayoutMultipleX withString:@""] integerValue];
     }
     return [value floatValue];
 }
