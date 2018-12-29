@@ -10,9 +10,10 @@
 
 @interface ItemLayout : NSObject
 
-@property (nonatomic) NSInteger x;
-@property (nonatomic) NSInteger y;
-@property (nonatomic) NSInteger w;
-@property (nonatomic) NSInteger h;
+// have to include these values
+@property (nonatomic, strong) NSString *x;
+@property (nonatomic, strong) NSString *y;
+@property (nonatomic, strong) NSString *w;
+@property (nonatomic, strong) NSString *h;
 
 @end

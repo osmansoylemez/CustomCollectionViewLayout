@@ -13,9 +13,10 @@
 		E3B4F16121D56914000AFD18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B4F16021D56914000AFD18 /* Assets.xcassets */; };
 		E3B4F16421D56914000AFD18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B4F16221D56914000AFD18 /* LaunchScreen.storyboard */; };
 		E3B4F16721D56914000AFD18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B4F16621D56914000AFD18 /* main.m */; };
-		E3B4F16F21D56A7D000AFD18 /* DynamicCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B4F16E21D56A7D000AFD18 /* DynamicCollectionViewFlowLayout.m */; };
 		E3B4F17221D56DFA000AFD18 /* ItemLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B4F17121D56DFA000AFD18 /* ItemLayout.m */; };
 		E3B4F17521D575EF000AFD18 /* DynamicFlowLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B4F17421D575EF000AFD18 /* DynamicFlowLayoutManager.m */; };
+		E3B6A6D221D78D230009318D /* DynamicCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A6CE21D78D230009318D /* DynamicCollectionView.m */; };
+		E3B6A6D321D78D230009318D /* DynamicCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A6D121D78D230009318D /* DynamicCollectionViewFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,12 +30,14 @@
 		E3B4F16321D56914000AFD18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3B4F16521D56914000AFD18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B4F16621D56914000AFD18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E3B4F16D21D56A7D000AFD18 /* DynamicCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		E3B4F16E21D56A7D000AFD18 /* DynamicCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		E3B4F17021D56DFA000AFD18 /* ItemLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemLayout.h; sourceTree = "<group>"; };
 		E3B4F17121D56DFA000AFD18 /* ItemLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemLayout.m; sourceTree = "<group>"; };
 		E3B4F17321D575EF000AFD18 /* DynamicFlowLayoutManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicFlowLayoutManager.h; sourceTree = "<group>"; };
 		E3B4F17421D575EF000AFD18 /* DynamicFlowLayoutManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicFlowLayoutManager.m; sourceTree = "<group>"; };
+		E3B6A6CE21D78D230009318D /* DynamicCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicCollectionView.m; sourceTree = "<group>"; };
+		E3B6A6CF21D78D230009318D /* DynamicCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		E3B6A6D021D78D230009318D /* DynamicCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicCollectionView.h; sourceTree = "<group>"; };
+		E3B6A6D121D78D230009318D /* DynamicCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,7 @@
 		E3B4F15621D56913000AFD18 /* CustomCollectionViewLayout */ = {
 			isa = PBXGroup;
 			children = (
+				E3B6A6CD21D78D230009318D /* DynamicCollectionView */,
 				E3B4F15721D56913000AFD18 /* AppDelegate.h */,
 				E3B4F15821D56913000AFD18 /* AppDelegate.m */,
 				E3B4F15A21D56913000AFD18 /* ViewController.h */,
@@ -76,14 +80,23 @@
 				E3B4F16221D56914000AFD18 /* LaunchScreen.storyboard */,
 				E3B4F16521D56914000AFD18 /* Info.plist */,
 				E3B4F16621D56914000AFD18 /* main.m */,
-				E3B4F16D21D56A7D000AFD18 /* DynamicCollectionViewFlowLayout.h */,
-				E3B4F16E21D56A7D000AFD18 /* DynamicCollectionViewFlowLayout.m */,
 				E3B4F17021D56DFA000AFD18 /* ItemLayout.h */,
 				E3B4F17121D56DFA000AFD18 /* ItemLayout.m */,
 				E3B4F17321D575EF000AFD18 /* DynamicFlowLayoutManager.h */,
 				E3B4F17421D575EF000AFD18 /* DynamicFlowLayoutManager.m */,
 			);
 			path = CustomCollectionViewLayout;
+			sourceTree = "<group>";
+		};
+		E3B6A6CD21D78D230009318D /* DynamicCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E3B6A6D021D78D230009318D /* DynamicCollectionView.h */,
+				E3B6A6CE21D78D230009318D /* DynamicCollectionView.m */,
+				E3B6A6CF21D78D230009318D /* DynamicCollectionViewFlowLayout.h */,
+				E3B6A6D121D78D230009318D /* DynamicCollectionViewFlowLayout.m */,
+			);
+			path = DynamicCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,10 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B6A6D221D78D230009318D /* DynamicCollectionView.m in Sources */,
 				E3B4F17221D56DFA000AFD18 /* ItemLayout.m in Sources */,
 				E3B4F15C21D56913000AFD18 /* ViewController.m in Sources */,
 				E3B4F16721D56914000AFD18 /* main.m in Sources */,
-				E3B4F16F21D56A7D000AFD18 /* DynamicCollectionViewFlowLayout.m in Sources */,
+				E3B6A6D321D78D230009318D /* DynamicCollectionViewFlowLayout.m in Sources */,
 				E3B4F15921D56913000AFD18 /* AppDelegate.m in Sources */,
 				E3B4F17521D575EF000AFD18 /* DynamicFlowLayoutManager.m in Sources */,
 			);

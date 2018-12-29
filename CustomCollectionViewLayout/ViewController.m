@@ -10,12 +10,11 @@
 #import "DynamicFlowLayoutManager.h"
 #import "ItemLayout.h"
 #import "DynamicCollectionViewFlowLayout.h"
+#import "DynamicCollectionView.h"
 
-@interface ViewController () <UICollectionViewDelegateFlowLayout>
+@interface ViewController () <DynamicCollectionViewDelegate,DynamicCollectionViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
-@property (nonatomic) NSArray *dataSource;
+@property (weak, nonatomic) IBOutlet DynamicCollectionView *collectionView;
 
 @end
 
@@ -24,11 +23,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.dataSource = [[DynamicFlowLayoutManager sharedInstance] getDataSource];
+    
+    self.collectionView.collectionViewDelegate = self;
+    self.collectionView.collectionViewDataSource = self;
 }
 
-#pragma mark UICollectionView
+#pragma mark DynamicCollectionView
+#pragma mark DynamicCollectionViewDatasource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -37,7 +38,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.dataSource.count;
+    return [[[DynamicFlowLayoutManager sharedInstance] getDataSource] count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -76,15 +77,17 @@
     return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+- (NSArray *)itemLayoutDataSource
 {
-    if ([collectionViewLayout isKindOfClass:[DynamicCollectionViewFlowLayout class]])
-    {
-        DynamicCollectionViewFlowLayout *dynamicFlowLayout = (DynamicCollectionViewFlowLayout *)collectionViewLayout;
-        return [dynamicFlowLayout sizeForItemAtIndexPath:indexPath];
-    }
-    return CGSizeMake(1, 1);
+    return [[DynamicFlowLayoutManager sharedInstance] getDataSource];
 }
+
+- (NSInteger)maximumColumnCount
+{
+    return 4;
+}
+
+#pragma mark DynamicCollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {

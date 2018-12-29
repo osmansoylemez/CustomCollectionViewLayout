@@ -45,118 +45,88 @@
 {
     self.dataSource = [NSMutableArray array];
     ItemLayout *layout = [ItemLayout new];
-    layout.h = 2;
-    layout.w = 4;
-    layout.x = 0;
-    layout.y = 0;
+    layout.h = @"2x";
+    layout.w = @"4x";
+    layout.x = @"0x";
+    layout.y = @"0x";
     [self.dataSource addObject:layout];
     
     layout = [ItemLayout new];
-    layout.h = 2;
-    layout.w = 4;
-    layout.x = 0;
-    layout.y = 1;
+    layout.h = @"2x";
+    layout.w = @"4x";
+    layout.x = @"0x";
+    layout.y = @"1x";
     [self.dataSource addObject:layout];
     
     layout = [ItemLayout new];
-    layout.h = 2;
-    layout.w = 2;
-    layout.x = 0;
-    layout.y = 2;
+    layout.h = @"2x";
+    layout.w = @"2x";
+    layout.x = @"0x";
+    layout.y = @"2x";
     [self.dataSource addObject:layout];
     
     layout = [ItemLayout new];
-    layout.h = 1;
-    layout.w = 1;
-    layout.x = 2;
-    layout.y = 2;
+    layout.h = @"1x";
+    layout.w = @"1x";
+    layout.x = @"2x";
+    layout.y = @"2x";
     [self.dataSource addObject:layout];
     
     layout = [ItemLayout new];
-    layout.h = 1;
-    layout.w = 1;
-    layout.x = 3;
-    layout.y = 2;
+    layout.h = @"1x";
+    layout.w = @"1x";
+    layout.x = @"3x";
+    layout.y = @"2x";
     [self.dataSource addObject:layout];
     
     layout = [ItemLayout new];
-    layout.h = 1;
-    layout.w = 2;
-    layout.x = 2;
-    layout.y = 3;
+    layout.h = @"1x";
+    layout.w = @"2x";
+    layout.x = @"2x";
+    layout.y = @"3x";
     [self.dataSource addObject:layout];
     
     layout = [ItemLayout new];
-    layout.h = 1;
-    layout.w = 3;
-    layout.x = 0;
-    layout.y = 4;
+    layout.h = @"1x";
+    layout.w = @"3x";
+    layout.x = @"0x";
+    layout.y = @"4x";
     [self.dataSource addObject:layout];
 
     layout = [ItemLayout new];
-    layout.h = 1;
-    layout.w = 1;
-    layout.x = 3;
-    layout.y = 4;
+    layout.h = @"1x";
+    layout.w = @"1x";
+    layout.x = @"3x";
+    layout.y = @"4x";
     [self.dataSource addObject:layout];
     
     layout = [ItemLayout new];
-    layout.h = 1;
-    layout.w = 1;
-    layout.x = 0;
-    layout.y = 5;
+    layout.h = @"1x";
+    layout.w = @"1x";
+    layout.x = @"0x";
+    layout.y = @"5x";
     [self.dataSource addObject:layout];
     
     layout = [ItemLayout new];
-    layout.h = 1;
-    layout.w = 1;
-    layout.x = 1;
-    layout.y = 5;
+    layout.h = @"1x";
+    layout.w = @"1x";
+    layout.x = @"1x";
+    layout.y = @"5x";
     [self.dataSource addObject:layout];
     
     layout = [ItemLayout new];
-    layout.h = 1;
-    layout.w = 2;
-    layout.x = 2;
-    layout.y = 5;
+    layout.h = @"1x";
+    layout.w = @"2x";
+    layout.x = @"2x";
+    layout.y = @"5x";
     [self.dataSource addObject:layout];
 
     layout = [ItemLayout new];
-    layout.h = 4;
-    layout.w = 4;
-    layout.x = 0;
-    layout.y = 6;
+    layout.h = @"200";
+    layout.w = @"375";
+    layout.x = @"0x";
+    layout.y = @"6x";
     [self.dataSource addObject:layout];
-    
-    
-    /*
-    layout = [ItemLayout new];
-    layout.h = 1;
-    layout.w = 2;
-    layout.x = 2;
-    layout.y = 6;
-    
-     [self.dataSource addObject:layout];
-    layout = [ItemLayout new];
-    layout.h = 2;
-    layout.w = 2;
-    [self.dataSource addObject:layout];
-    
-    layout = [ItemLayout new];
-    layout.h = 2;
-    layout.w = 2;
-    [self.dataSource addObject:layout];
-    
-    layout = [ItemLayout new];
-    layout.h = 2;
-    layout.w = 2;
-    [self.dataSource addObject:layout];
-    
-    layout = [ItemLayout new];
-    layout.h = 1;
-    layout.w = 4;
-    [self.dataSource addObject:layout];
-     */
 }
 
 @end

@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol DynamicCollectionViewFlowLayoutDelegate <NSObject>
+
+@optional
+- (NSArray *)itemLayoutDataSource;
+- (NSInteger)maximumColumnCount;
+
+@end
+
 @interface DynamicCollectionViewFlowLayout : UICollectionViewFlowLayout
+
+@property (nonatomic, strong) id<DynamicCollectionViewFlowLayoutDelegate> delegate;
 
 - (CGSize)sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 
